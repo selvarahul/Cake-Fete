@@ -1,0 +1,94 @@
+.admin-login-page {
+  flex: 1;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-gradient);
+  padding: 40px 20px;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 450px;
+}
+
+.login-card {
+  padding: 50px 40px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.login-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.login-header p {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.error-message {
+  background: #fee;
+  color: #c33;
+  padding: 12px 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border-left: 4px solid #c33;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.login-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.login-form label {
+  font-weight: 500;
+  color: var(--text-dark);
+  font-size: 0.95rem;
+}
+
+.login-form input {
+  padding: 14px 18px;
+}
+
+.btn-login {
+  width: 100%;
+  padding: 14px;
+  font-size: 1.1rem;
+  margin-top: 10px;
+}
+
+.btn-login:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .login-card {
+    padding: 40px 30px;
+  }
+  
+  .login-header h1 {
+    font-size: 2rem;
+  }
+}
+

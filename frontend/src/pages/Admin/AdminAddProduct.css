@@ -1,0 +1,202 @@
+/* AdminAddProduct.css (SCOPED + Centered)
+   All rules are prefixed with .admin-add-product to avoid leaking styles
+   Centers the Add Product card/form on the page
+*/
+
+.admin-add-product { box-sizing: border-box; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+
+/* Local CSS variables — scoped to add-product only */
+.admin-add-product {
+  --ap-bg: #f8fafc;
+  --ap-surface: #ffffff;
+  --ap-muted: #6b7280;
+  --ap-text: #0f1724;
+  --ap-accent: #0ea5e9;
+  --ap-accent-2: #7c3aed;
+  --ap-green: #10b981;
+  --ap-red: #ef4444;
+  --ap-border: rgba(16,24,40,0.06);
+  --ap-soft-shadow: 0 8px 18px rgba(16,24,40,0.04);
+  --ap-radius: 10px;
+}
+
+/* Center the Add Product page container (full-page centering) */
+.admin-add-product {
+  display: flex;
+  justify-content: center;   /* center horizontally */
+  align-items: flex-start;   /* slightly down from top */
+  min-height: 100vh;
+  padding-top: 48px;         /* spacing from navbar */
+  background: var(--ap-bg);
+  box-sizing: border-box;
+}
+
+/* Page container */
+.admin-add-product .page-container,
+.admin-add-product > .container {
+  max-width: 680px;         /* centered card width */
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Card (scoped) */
+.admin-add-product .card {
+  background: var(--ap-surface);
+  border-radius: calc(var(--ap-radius));
+  padding: 18px;
+  border: 1px solid var(--ap-border);
+  box-shadow: var(--ap-soft-shadow);
+  color: var(--ap-text);
+  margin: 0 auto;           /* ensures centered card */
+}
+
+/* Topbar / header */
+.admin-add-product .topbar {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  margin-bottom:12px;
+}
+.admin-add-product .topbar h1 { margin:0; font-size:18px; font-weight:800; color:var(--ap-text); }
+
+/* Form layout */
+.admin-add-product .form-row {
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  margin-bottom:12px;
+}
+.admin-add-product .form-row.horiz { flex-direction:row; gap:10px; }
+.admin-add-product .form-row label { font-size:13px; color:var(--ap-text); font-weight:700; }
+.admin-add-product .form-row input,
+.admin-add-product .form-row textarea,
+.admin-add-product .form-row select {
+  padding:10px 12px;
+  border-radius:8px;
+  border:1px solid var(--ap-border);
+  background: #fff;
+  color:var(--ap-text);
+  font-size:14px;
+  outline: none;
+  transition: box-shadow .12s ease, border-color .12s ease;
+}
+.admin-add-product .form-row input:focus,
+.admin-add-product .form-row textarea:focus,
+.admin-add-product .form-row select:focus {
+  box-shadow: 0 6px 18px rgba(14,165,233,0.08);
+  border-color: rgba(14,165,233,0.16);
+}
+
+/* File input preview */
+.admin-add-product .form-row.preview { display:flex; gap:12px; align-items:center; }
+.admin-add-product .form-row.preview img {
+  max-width: 320px;
+  width: 100%;
+  border-radius:8px;
+  object-fit:cover;
+  border: 1px solid var(--ap-border);
+  box-shadow: 0 6px 18px rgba(16,24,40,0.03);
+}
+
+/* Progress bar */
+.admin-add-product .progress-bar {
+  width:100%;
+  background: rgba(2,6,23,0.03);
+  border-radius:8px;
+  overflow:hidden;
+  height:10px;
+}
+.admin-add-product .progress {
+  height:100%;
+  background: linear-gradient(90deg,var(--ap-accent), var(--ap-accent-2));
+  width:0%;
+  transition: width .2s ease;
+}
+
+/* Product list (existing products) */
+.admin-add-product .product-list {
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  margin-top: 14px;
+}
+.admin-add-product .product-row {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:12px;
+  border-radius:10px;
+  background: var(--ap-surface);
+  border: 1px solid var(--ap-border);
+}
+.admin-add-product .product-row img {
+  width:100px;
+  height:80px;
+  object-fit:cover;
+  border-radius:8px;
+  flex-shrink:0;
+}
+
+/* Product meta */
+.admin-add-product .product-meta { flex:1; display:flex; flex-direction:column; gap:4px; min-width:0; }
+.admin-add-product .product-meta .title { font-weight:800; font-size:15px; color:var(--ap-text); }
+.admin-add-product .product-meta .muted { color:var(--ap-muted); font-size:13px; }
+
+/* Product actions (scoped) */
+.admin-add-product .product-actions { display:flex; gap:8px; align-items:center; }
+.admin-add-product .product-actions .btn { padding:8px 10px; border-radius:8px; font-weight:700; cursor:pointer; border:1px solid rgba(16,24,40,0.06); background:#fff; color:var(--ap-text); }
+.admin-add-product .product-actions .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(16,24,40,0.04); }
+.admin-add-product .btn-primary {
+  background: linear-gradient(90deg,var(--ap-accent), var(--ap-accent-2));
+  color:white;
+  border:none;
+  padding:9px 14px;
+  border-radius:8px;
+}
+.admin-add-product .btn-danger {
+  background: transparent;
+  border: 1px solid rgba(236,72,153,0.06);
+  color: var(--ap-red);
+  padding:8px 12px;
+  border-radius:8px;
+}
+
+/* Small utilities */
+.admin-add-product .muted { color:var(--ap-muted); }
+.admin-add-product .small { font-size:13px; }
+
+/* Accessibility focus for buttons and inputs */
+.admin-add-product .btn:focus,
+.admin-add-product input:focus,
+.admin-add-product textarea:focus,
+.admin-add-product select:focus {
+  outline: 3px solid rgba(14,165,233,0.12);
+  outline-offset: 2px;
+}
+
+/* Empty state */
+.admin-add-product .muted-empty {
+  text-align:center;
+  padding:24px;
+  color:var(--ap-muted);
+  background: linear-gradient(180deg, rgba(2,6,23,0.02), transparent);
+  border-radius:8px;
+}
+
+/* Responsive */
+@media (max-width: 860px) {
+  .admin-add-product .form-row.horiz { flex-direction:column; }
+  .admin-add-product .product-row { flex-direction:column; align-items:flex-start; gap:8px; }
+  .admin-add-product .product-row img { width:100%; height:auto; }
+  .admin-add-product .product-actions { width:100%; justify-content:flex-start; flex-wrap:wrap; }
+}
+
+/* Print friendly */
+@media print {
+  .admin-add-product .btn,
+  .admin-add-product .product-actions,
+  .admin-add-product .progress { display:none !important; }
+  .admin-add-product .card { box-shadow:none; border: none; }
+}

@@ -1,0 +1,398 @@
+/* src/pages/Cart.css */
+/* Compact cart styles - drop-in replacement or append */
+
+/* basic page */
+.cart-page {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: #222;
+  background: #f8f8f9;
+  min-height: 100vh;
+}
+
+/* page container */
+.page-container {
+  max-width: 1100px;
+  margin: 18px auto;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+/* compact variant */
+.page-container.compact-cart {
+  max-width: 980px;
+  margin: 18px auto;
+  padding: 12px;
+}
+
+/* titles */
+.page-title {
+  margin: 6px 0 12px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* layout */
+.cart-content.compact {
+  display: grid;
+  grid-template-columns: 1fr 320px; /* items + summary */
+  gap: 14px;
+  align-items: start;
+}
+
+/* items list */
+.cart-items.compact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* compact product card */
+.cart-item.compact-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  gap: 12px;
+}
+
+/* left section (image + details) */
+.cart-item-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  flex: 1;
+}
+
+.cart-item-image.compact-thumb {
+  width: 80px;
+  height: 80px;
+  flex: 0 0 80px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f7f7f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-item-image.compact-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* details */
+.cart-item-details.compact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.cart-item-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #222;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 360px;
+}
+
+.cart-item-category.muted.small {
+  font-size: 12px;
+  color: #777;
+}
+
+.cart-item-price.small {
+  font-size: 13px;
+  color: #333;
+}
+
+/* right section */
+.cart-item-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  min-width: 110px;
+  margin-left: 8px;
+}
+
+/* qty controls */
+.quantity-controls.compact-qty {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  padding: 2px;
+  border-radius: 6px;
+}
+
+.qty-btn {
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: #eee;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qty-btn:focus {
+  outline: 2px solid rgba(43,124,255,0.25);
+}
+
+.qty-value {
+  min-width: 26px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* totals & remove */
+.cart-item-total.small {
+  font-size: 13px;
+  font-weight: 600;
+  color: #111;
+}
+
+.btn-remove.small, .btn-link {
+  background: none;
+  border: none;
+  color: #c62828;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 2px 6px;
+}
+
+/* summary */
+.cart-summary.compact-summary {
+  padding: 14px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: fit-content;
+}
+
+.summary-title { font-size: 16px; margin: 0; }
+.summary-row { display:flex; justify-content:space-between; font-size:14px; color:#333; }
+.summary-total { display:flex; justify-content:space-between; font-weight:700; font-size:16px; padding-top:6px; border-top:1px solid #eee; }
+
+/* buttons */
+.btn { padding: 8px 12px; border-radius: 6px; cursor: pointer; font-weight: 600; }
+.btn-primary { background:#2b7cff; color:#fff; border:none; }
+.btn-outline { background:transparent; border:1px solid #ccc; color:#333; padding:6px 10px; }
+.btn-sm { font-size:13px; padding:6px 10px; }
+
+/* btn-link */
+.btn-link {
+  color: #2b7cff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
+
+/* compact form */
+.card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 6px 18px rgba(20,20,20,0.04);
+}
+
+.order-form-container.card { max-width:700px; width:100%; }
+.compact-form .form-row { margin-bottom:10px; display:flex; flex-direction:column; gap:6px; }
+.compact-form .form-row.horiz { display:flex; gap:10px; }
+.compact-form input, .compact-form textarea, .compact-form select { padding:8px; border-radius:6px; border:1px solid #ddd; }
+
+/* small utility */
+.muted { color:#777; }
+.small { font-size:12px; }
+
+/* responsive: stack summary under items on narrow screens */
+@media (max-width: 880px) {
+  .cart-content.compact { grid-template-columns: 1fr; }
+  .cart-item-right { align-items: flex-start; flex-direction: row; gap: 12px; }
+  .cart-item-name { max-width: 200px; }
+}
+
+/* AUTO-ADJUSTING GRID */
+.grid-cart {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+}
+
+/* MINI CARD */
+.grid-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* SMALL IMAGE */
+.grid-thumb {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 6px;
+}
+
+/* PRODUCT NAME */
+.grid-name {
+  font-size: 13px;
+  font-weight: 600;
+  height: 32px;
+  overflow: hidden;
+}
+
+/* PRICE */
+.grid-price {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 4px 0;
+}
+
+/* QUANTITY CONTROLS */
+.grid-qty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin: 6px 0;
+}
+
+.grid-qty button {
+  width: 22px;
+  height: 22px;
+  border: none;
+  background: #eee;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* REMOVE BUTTON */
+.grid-remove {
+  margin-top: 5px;
+  font-size: 11px;
+  color: #c62828;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ======================
+   Empty cart — centered
+   ====================== */
+.empty-cart-wrapper {
+  display: flex;
+  align-items: center;      /* vertical centering */
+  justify-content: center;  /* horizontal centering */
+  min-height: 240px;        /* ensures some vertical space */
+  padding: 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.empty-cart {
+  text-align: center;
+  background: transparent;
+  padding: 18px 24px;
+  border-radius: 10px;
+  color: #444;
+}
+
+.empty-cart .empty-cart-icon {
+  font-size: 44px;
+  margin-bottom: 8px;
+}
+
+.empty-cart h2 {
+  margin: 6px 0 8px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.empty-cart p {
+  margin: 0 0 12px;
+  color: #666;
+}
+
+/* optional CTA button style */
+.empty-cart .btn-continue {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: #2b7cff;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ===========================
+   Order form overlay / modal
+   =========================== */
+/* High z-index to ensure it sits above fixed navbars */
+.order-form-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999; /* <-- increased to sit above most navbars */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(12,12,12,0.45);
+  padding: 24px;
+  box-sizing: border-box;
+  overflow: auto; /* allow scrolling if content bigger than viewport */
+}
+
+/* container: limit height and make scrollable internally */
+.order-form-container {
+  max-width: 720px;
+  width: 100%;
+  background: #fff;
+  border-radius: 10px;
+  padding: 18px;
+  box-shadow: 0 12px 40px rgba(10,10,10,0.2);
+  max-height: calc(100vh - 120px); /* keep some gap from viewport edges */
+  overflow: auto;
+}
+
+/* small improvements */
+.order-form-container h2 { margin: 0 0 10px; font-size: 18px; }
+.form-actions { display:flex; justify-content:flex-end; gap:8px; margin-top:8px; }
+
+/* accessibility: trap focus hint */
+.order-form-container:focus { outline: none; }
+
+/* small screens: ensure form appears below fixed header and is scrollable */
+@media (max-width: 640px) {
+  .order-form-overlay {
+    align-items: flex-start;
+    padding-top: 88px; /* give space for fixed header (adjust if your header height differs) */
+  }
+
+  .order-form-container { padding: 12px; max-height: calc(100vh - 120px); }
+  .cart-content.compact { gap: 10px; }
+  .cart-item-image.compact-thumb { width: 68px; height: 68px; flex: 0 0 68px; }
+}
