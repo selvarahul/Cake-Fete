@@ -1,4 +1,4 @@
-# MahaSri Cake Ordering Website
+# Cake Ordering Website
 
 A full-stack cake ordering website with user and admin interfaces. Built with React frontend and Node.js/Express backend.
 
@@ -166,4 +166,5 @@ MahaSri/
 ## License
 
 ISC
+
 
